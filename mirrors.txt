@@ -1,0 +1,33 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+# Mirrors are assigned by the main onion address or backup onion address.  All mirrors start with the word Exchange.  If an address hasn't been assigned by the main onion or backup onion, our PGP key should be used to verify against the mirror.txt on the server.  We will be keeping any address we've ever used online.
+
+# Main Onion:
+http://exchangehd5455aori4qvrwhyno4ul7xrz4foy6qwga3olnbclp5f4qd.onion - (exchangehd5455 aori 4qvr whyno 4u l7 xrz4 foy6 qwga 3oln bclp 5f4qd dot onion)
+The main address, listed above, is easily recognizable and contains "exchange", "hd5455", "whyno" and "nbc".
+
+# Backup Onion:
+http://exchangefslaccgsraxoewmlcgxwcegs6maqqqw5fgcpfan7fys3hxid.onion - (exchange fslaccgsraxoewmlcgxwcegs6ma qqq w5fg cpfan 7fys3hxid dot onion)
+The backup address, listed above, is easily recognizable and contains "exchange", "qqq" and "cpfan".
+
+# Status Onion:
+http://exchangefni42bngqxeioyclrkau34peypptesthnqxmudwxtrfvo7yd.onion - (exchange fni42bngqxeioy clr kau34peypp test hnqx mud wxtrfvo7yd dot onion)
+Our backup address, listed above, is easily recognizable and contains "exchange", "clr", "test" and "mud".
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEED7tMdQhZpYiSJy7xI7nztJdcn/oFAmfKEXwACgkQI7nztJdc
+n/qP0xAAhXggkPBtl0jDlECiWq2Iwi5/OFlaQ6PFuAYGxihUs+7d/KXHPcVLtFbH
+yV+JkYky3avBezKzcQTKavaaTEEEX/Gdsg4qgFytpmTrKMmq5cpIdkFMTEwgEC8W
+kZSLUvudHjZQhHupugZLKsLumOEiCDXfxY62mhOatjEwEsq32j3b4uXOrouIdVtl
+jX5VjkU43EvcP5OpwqNZnGzFW9a0mzaRwGW2Du0A10yGpyMuyW1fBIXxg0ZRJksF
+Z4lydnaOzv4N3HFo94mFFiPW8gc3OZ0f8B97cyfU7SlgZwkhR7Jwz8Np1p/v4ey7
+cAGjx8eQ/Zv8jpTosMrL+mTXR/Qua0IWtSY+NwCUBuLb0SOEMiyBf53lhpNjMKKS
+0478/yjU9GFrI+7ENXRFn7w/i6yWwtP5iQypbx3DT2Tm8uw1RFZO1kAxiwl+Xq78
+/Nm1+j6E99MVqZapuXYrP0tsQDS6kO0Ol6K+UVih7QkvcYjR6bfGVY+3HlWaP0nc
+xRt69smgwZwJkHQ761Z32XqFRhB9WUZlRmCux7C1Swle9nZ9IsluQ1O2v4VdeF02
+LdqF9VZXYnaFO3gecrcdfWacDrDoMP18fHSgpkN/jYQg9lK2+fMM31AWZY4uS+Ef
+CeFj3D4tCb8lKSsFoKRLeBmNjjY7dO9GVL/EWnj5u8VRuEbG5HQ=
+=MNtf
+-----END PGP SIGNATURE-----

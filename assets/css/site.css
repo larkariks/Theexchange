@@ -1,0 +1,392 @@
+.i18 {
+    width: 18px;
+}
+
+.i20 {
+    width: 20px;
+}
+
+.i22 {
+    width: 22px;
+}
+
+.i24 {
+    width: 24px;
+}
+
+.i28 {
+    width: 28px;
+}
+
+.i32 {
+    width: 32px;
+}
+
+.i34 {
+    width: 34px;
+}
+
+.i36 {
+    width: 36px;
+}
+
+.i48 {
+    width: 48px;
+}
+
+.i64 {
+    width: 64px;
+}
+
+.hide-radio {
+    display: none;
+}
+
+.c-preview0, .c-preview1, .c-preview2, .c-preview3, .c-preview4, .c-preview5, .c-preview6, .c-preview7, .c-preview8 {
+    display: none;
+}
+
+.c-preview0-r:checked ~ .c-preview0 {
+    display: block;
+}
+
+.c-preview1-r:checked ~ .c-preview1 {
+    display: block;
+}
+
+.c-preview2-r:checked ~ .c-preview2 {
+    display: block;
+}
+
+.c-preview3-r:checked ~ .c-preview3 {
+    display: block;
+}
+
+.c-preview4-r:checked ~ .c-preview4 {
+    display: block;
+}
+
+.c-preview5-r:checked ~ .c-preview5 {
+    display: block;
+}
+
+.c-preview6-r:checked ~ .c-preview6 {
+    display: block;
+}
+
+.c-preview7-r:checked ~ .c-preview7 {
+    display: block;
+}
+
+.c-preview8-r:checked ~ .c-preview8 {
+    display: block;
+}
+
+.eto-usertext {
+    display: none;
+}
+
+.eto-usertext-r:checked ~ .eto-usertext {
+    display: block;
+}
+
+.cpi-dark {
+    background:rgba(21,38,58,1);
+    position:absolute;
+    top:6px;
+    right:6px;
+    z-index:10;
+    padding:6px;
+    margin:6px;
+    border-radius: 6px;
+}
+
+.cpi-light {
+    background:rgba(246,249,251,1);
+    position:absolute;
+    top:6px;
+    right:6px;
+    z-index:10;
+    padding:6px;
+    margin:6px;
+    border-radius: 6px;
+}
+
+.content-image {
+    position: relative;
+    display: block;
+}
+
+.content-image-animated {
+    position: relative;
+    display: none;
+}
+
+.content-images:hover > .content-image {
+    position: relative;
+    display: none;
+}
+
+.content-images:hover > .content-image-animated {
+    display: block;
+    animation: fade_in_show 0.5s;
+}
+
+.content-image-grid {
+    position: relative;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+@keyframes fade_in_show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.showElement20s {
+    animation: showElement20sAni 0s 15s forwards;
+    opacity: 0;
+    left: -9999px;
+}
+
+@keyframes showElement20sAni {
+    to   { opacity: 1; left:0; }
+}
+
+.ci {
+    position: absolute;
+    z-index: 10;
+    padding: 6px;
+    margin: 6px;
+    border-radius: 1.125rem;
+}
+
+.ci-dark {
+    background: rgba(42,48,66,0.8);
+}
+
+.ci-light {
+    background: rgba(231,236,240,0.8);
+}
+
+.ci-top-left {
+    top: 0;
+    left: 0;
+}
+
+.ci-top-right {
+    top: 0;
+    right: 0;
+}
+
+.ci-bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.ci-bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+.modalBackStyle {
+    position: fixed;
+    z-index: 1050;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: #000000;
+    background: #000000;
+    opacity: 0.85;
+}
+
+.primary-active > .icon-hover  {
+    filter: brightness(0) saturate(100%) invert(37%) sepia(78%) saturate(3959%) hue-rotate(184deg) brightness(97%) contrast(101%);
+}
+
+.success-hover-ico:hover > .icon-hover  {
+    filter: brightness(0) saturate(100%) invert(67%) sepia(65%) saturate(383%) hue-rotate(96deg) brightness(93%) contrast(86%);
+}
+
+.dropdown:hover > .dropdown-toggle {
+    color: var(--bs-btn-active-color);
+    background-color: var(--bs-btn-active-bg);
+    border-color: var(--bs-btn-active-border-color);
+    box-shadow: var(--bs-btn-active-shadow);
+}
+
+.dropdown:hover > .dropdown-menu {
+    display: block;
+    border: 1px solid var(--bs-border-color) !important;
+}
+
+.notification-count {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    display: block !important;
+    padding: 3px 5px !important;
+    font-size: 10px !important;
+    border-radius: 50px !important;
+    line-height: 1.1;
+    box-shadow: 0 0 0 rgba(255, 71, 61, 0.9);
+    animation: pulse 2s infinite;
+}
+
+/* UPLOADS */
+.uploadInProgress {
+    display: none;
+}
+
+.uploadCheckbox:checked ~ .uploadPage {
+    display: none;
+}
+
+.uploadCheckbox:checked ~ .uploadInProgress {
+    display: block;
+}
+
+/* TABS */
+
+input.hide-radio-input1 {
+    display: none;
+}
+input.hide-radio-input2 {
+    display: none;
+}
+input.hide-radio-input3 {
+    display: none;
+}
+input.hide-radio-input4 {
+    display: none;
+}
+
+.tab-el1 {
+    display: none;
+    transition: all 0.2s ease;
+}
+
+.tab-el2 {
+    display: none;
+    transition: all 0.2s ease;
+}
+
+.tab-el3 {
+    display: none;
+    transition: all 0.2s ease;
+}
+
+.tab-el4 {
+    display: none;
+    transition: all 0.2s ease;
+}
+
+input[type=radio].hide-radio-input1:checked ~ .tab-el1 {
+    display: block;
+    transition: all 0.2s ease;
+}
+
+input[type=radio].hide-radio-input1:checked ~ .card-header > .tab1-btn {
+    color: #FFFFFF !important;
+    background: #0085db !important;
+}
+
+input[type=radio].hide-radio-input1:checked ~ .text-center > .tab1-btn {
+    color: #FFFFFF !important;
+    background: #0085db !important;
+}
+
+input[type=radio].hide-radio-input1:checked ~ .card > .card-body > .row > .d-grid > .tab1-btn {
+    color: #FFFFFF !important;
+    background: #0085db !important;
+}
+
+input[type=radio].hide-radio-input2:checked ~ .tab-el2 {
+    display: block;
+    transition: all 0.2s ease;
+}
+
+input[type=radio].hide-radio-input2:checked ~ .card-header > .tab2-btn {
+    color: #FFFFFF !important;
+    background: #0085db !important;
+}
+
+input[type=radio].hide-radio-input2:checked ~ .text-center > .tab2-btn {
+    color: #FFFFFF !important;
+    background: #0085db !important;
+}
+
+input[type=radio].hide-radio-input2:checked ~ .card > .card-body > .row > .d-grid > .tab2-btn {
+    color: #FFFFFF !important;
+    background: #0085db !important;
+}
+
+input[type=radio].hide-radio-input3:checked ~ .tab-el3 {
+    display: block;
+    transition: all 0.2s ease;
+}
+
+input[type=radio].hide-radio-input3:checked ~ .card-header > .tab3-btn {
+    color: #FFFFFF !important;
+    background: #0085db !important;
+}
+
+input[type=radio].hide-radio-input3:checked ~ .text-center > .tab3-btn {
+    color: #FFFFFF !important;
+    background: #0085db !important;
+}
+
+input[type=radio].hide-radio-input3:checked ~ .card > .card-body > .row > .d-grid > .tab3-btn {
+    color: #FFFFFF !important;
+    background: #0085db !important;
+}
+
+input[type=radio].hide-radio-input4:checked ~ .tab-el4 {
+    display: block;
+    transition: all 0.2s ease;
+}
+
+input[type=radio].hide-radio-input4:checked ~ .card-header > .tab4-btn {
+    color: #FFFFFF !important;
+    background: #0085db !important;
+}
+
+input[type=radio].hide-radio-input4:checked ~ .text-center > .tab4-btn {
+    color: #FFFFFF !important;
+    background: #0085db !important;
+}
+
+input[type=radio].hide-radio-input4:checked ~ .card > .card-body > .row > .d-grid > .tab4-btn {
+    color: #FFFFFF !important;
+    background: #0085db !important;
+}
+
+/* Report Options */
+input.hide-input1 {
+    display: none;
+}
+
+.toggle-el1 {
+    display: none;
+    transition: all 0.2s ease;
+}
+
+.toggle-el1-normal {
+    display: block;
+    transition: all 0.2s ease;
+}
+
+input[type=checkbox].hide-input1:checked ~ .toggle-el1 {
+    display: block;
+    transition: all 0.2s ease;
+}
+
+input[type=checkbox].hide-input1:checked ~ .toggle-el1-normal {
+    display: none;
+    transition: all 0.2s ease;
+}

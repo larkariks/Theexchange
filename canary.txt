@@ -1,0 +1,56 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Today is 2025-07-09 and staff of The Exchange are in control of the PGP key.  As verification this message is current, the latest Bitcoin block is 904,680 with a hash of 00000000000000000000a0f91daeef68608057cda8b7d004043f1eed115843ac.  We will update this message within 14 days.
+
+THERE ARE FAKE CLONES OF THE EXCHANGE RUN BY OTHER PEOPLE DESIGNED TO STEAL LOGIN DETAILS AND STEAL FUNDS.
+Our minimum deposit is $5 and we do not charge you to create an account.  Using a fake site can also compromise your identity and prevent downloads from working.
+Ensure you are using an authentic site by verifying this message using the PGP resources below.  See mirrors.txt for additional onion address information.
+
+The Exchange is under our control and is located at:
+http://exchangehd5455aori4qvrwhyno4ul7xrz4foy6qwga3olnbclp5f4qd.onion - (exchangehd5455 aori 4qvr whyno 4u l7 xrz4 foy6 qwga 3oln bclp 5f4qd dot onion)
+Our main address, listed above, is easily recognizable and contains "exchange", "hd5455", "whyno" and "nbc".
+
+The Exchange has a backup address at:
+http://exchangefslaccgsraxoewmlcgxwcegs6maqqqw5fgcpfan7fys3hxid.onion - (exchange fslaccgsraxoewmlcgxwcegs6ma qqq w5fg cpfan 7fys3hxid dot onion)
+Our backup address, listed above, is easily recognizable and contains "exchange", "qqq" and "cpfan".
+
+The Exchange has a status address at:
+http://exchangefni42bngqxeioyclrkau34peypptesthnqxmudwxtrfvo7yd.onion - (exchange fni42bngqxeioy clr kau34peypp test hnqx mud wxtrfvo7yd dot onion)
+Our status address, listed above, is easily recognizable and contains "exchange", "clr", "test" and "mud".
+
+System issues in the past 14 days:
+*~8 Hours of unexpected downtime
+*Intermittent connection issues on the addresses listed above.  Make sure you have them all bookmarked.  Every mirror now has it's own signed message to verify it's onion address authenticity.
+
+V3 of the Exchange has been deployed, we continue to work on additional features.
+
+Reminder: Epstein didn't kill himself.
+
+Save and use our public key, located at:
+http://exchangehd5455aori4qvrwhyno4ul7xrz4foy6qwga3olnbclp5f4qd.onion/pgp.txt
+
+Our public key details:
+Key Fingerprint: 0FBB 4C75 0859 A588 9227 2EF1 23B9 F3B4 975C 9FFA
+Key ID: 23B9F3B4975C9FFA
+Key Created: 2022-01-01 04:20:35 +0000 UTC
+
+This message can be verified by a PGP program such as Kleopatra or by the utility at:
+http://darkfailenbsdla5mal2mxn2uz66od5vtzd5qozslagrfzachha3f3id.onion/pgp
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEED7tMdQhZpYiSJy7xI7nztJdcn/oFAmht3gUACgkQI7nztJdc
+n/rLQxAAimFnaxBW/SwhRBIJ1xzemeEV2XeDAgOLgb5HURvf7NeiqYukZaZk05Hq
+1ReWWMGJbiwChDZpU/APPLLqJTeM5I84Ckhx/VarI5y146vecO60V23pMKUxpZuW
+mgyyNI63O0/AARc9PZGMhREWoR72+rjlsD8SF8XoCGTjnwYSYOceH1QQPQICgfF7
+4M0AjDzof+Li4UH58DLph0HJIbooq9q2XN2jyeoD5awkD9yd2rbkTbhEiWGD0on2
+XGFYngII5aPLOACi+8ErClIVWNbWjl6uEc5Je7yaRnbAIoNsxIvdmBO48T4+9vLC
+rNvZ2R8lFSzKYZmrMjdxNnT3uoTByce92ARdtdmXhp5cn89lukQaX3oD3xLOUsdY
+QoQKxnHsDsI7nFLWRAdbFjggrmV3Gp4I/tlM2UI+2hzAHC917jfWTwachzkZfL5B
+v7HLqEMMU7AGIrrz9z4ofc3s+NqPajr950ndc8dS77uV3yRHV8R5BLguSIum6RL7
+bjO9ODlyR6pfV8d5WnL6WEMcam+AV0P6PawBo6MxCAK0XumdX4jn4C4TLmA0ibxG
+27hoY0RcgNrj1yf2G7vvyWKxpEzP3gQ0ZwbPKKkGabhlNlCO/ydpow4GBPduPwO9
+VTzdAGKG8lbAL304G/RBcfiaYlXn1BdiiWgo7lfva1xODnC8518=
+=1bLN
+-----END PGP SIGNATURE-----
