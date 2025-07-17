@@ -1,180 +1,822 @@
-
-
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Annuaire</title>
-    <link rel="stylesheet" href="css/w3.css%3Fv=SnYRvGd4c6D4f-IXJ7w6KkP1el3tOxDOM6DzcaLmAw8.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+    :root {
+      --primary: #4f46e5;
+      --secondary: #9333ea;
+      --accent: #f43f5e;
+      --bg: #f1f5f9;
+      --card-bg: #fff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --radius: 12px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color .2s;
+    }
+
+    .logo {
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .logo:hover {
+      opacity: .9;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .navbar-left {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .nav-link img {
+      width: 22px;
+      height: 22px;
+      filter: invert(1);
+      opacity: .85;
+      transition: opacity .2s;
+    }
+
+    .nav-link:hover img {
+      opacity: 1;
+    }
+
+    .badge {
+      background: var(--accent);
+      border-radius: 50%;
+      color: #fff;
+      font-size: .75rem;
+      padding: 2px 7px;
+      position: absolute;
+      top: -6px;
+      right: -14px;
+    }
+
+    .banner {
+      background: var(--accent);
+      color: #fff;
+      text-align: center;
+      padding: .6rem 1rem;
+      font-weight: 600;
+      font-size: .95rem;
+    }
+
+    .content {
+      display: flex;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .sidebar {
+      width: 230px;
+      flex-shrink: 0;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
+      padding: 1.75rem 1.25rem;
+      position: sticky;
+      top: 7.9rem;
+    }
+
+    .sidebar h3 {
+      font-size: 1.15rem;
+      margin-bottom: 1.2rem;
+      color: var(--primary);
+    }
+
+    .sidebar ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+    }
+
+    .cat-link {
+      display: block;
+      padding: .55rem .9rem;
+      border-radius: 8px;
+      font-weight: 500;
+      color: var(--muted);
+      transition: .2s;
+    }
+
+    .cat-link:hover {
+      background: var(--bg);
+      color: var(--primary);
+    }
+
+    .cat-link.active {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .product-list {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .product-item {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+      overflow: hidden;
+      transition: .25s;
+    }
+
+    .product-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, .08);
+    }
+
+    .product-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 1.1rem;
+    }
+
+    .product-info h2 {
+      font-size: 1.1rem;
+      margin: .4rem 0;
+    }
+
+    .price {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .breadcrumb {
+      font-size: .875rem;
+      margin-bottom: 1rem;
+      color: var(--muted);
+    }
+
+    .breadcrumb a {
+      color: inherit;
+    }
+
+    .badge-category {
+      display: inline-block;
+      margin-bottom: .9rem;
+      background: var(--secondary);
+      color: #fff;
+      padding: .25rem .7rem;
+      border-radius: 9999px;
+      font-size: .75rem;
+    }
+
+    .product-detail {
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 2.25rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+    }
+
+    .product-detail img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      margin-bottom: 1.7rem;
+    }
+
+    .product-detail h1 {
+      font-size: 1.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .product-detail p {
+      margin-bottom: 1rem;
+      color: var(--muted);
+    }
+
+    .product-detail .price {
+      font-size: 1.35rem;
+      color: var(--primary);
+      margin-bottom: 1.7rem;
+    }
+
+    .qty-wrapper {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin-bottom: 1.7rem;
+    }
+
+    .qty-input {
+      width: 80px;
+      text-align: center;
+      padding: .6rem .4rem;
+      border: 1px solid #cbd5e1;
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: .95rem;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .qty-input:focus {
+      outline: none;
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(147, 51, 234, .25);
+    }
+
+    .recommend-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+
+    .recommend-grid .product-item {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
+    }
+
+    .cart-container {
+      flex: 1;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+    }
+
+    .cart-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.65rem;
+    }
+
+    .cart-table th,
+    .cart-table td {
+      text-align: left;
+      padding: .85rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .cart-table th {
+      color: var(--muted);
+    }
+
+    .cart-total {
+      text-align: right;
+      font-size: 1.35rem;
+      font-weight: 600;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: .85rem 1.9rem;
+      border: none;
+      border-radius: var(--radius);
+      font-weight: 500;
+      font-size: .95rem;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: #fff;
+      transition: opacity .25s;
+    }
+
+    .btn:hover {
+      opacity: .9;
+    }
+
+    .btn.secondary {
+      background: #e2e8f0;
+      color: var(--text);
+    }
+
+    .btn.secondary:hover {
+      background: #cbd5e1;
+    }
+
+    .btn.small {
+      padding: .45rem 1rem;
+      font-size: .8rem;
+      border-radius: 8px;
+    }
+
+    .btn.remove {
+      background: var(--accent);
+    }
+
+    .btn.remove:hover {
+      opacity: .9;
+    }
+
+    .form-container {
+      min-width: 40%;
+      margin: 4rem auto;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 2.25rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+      text-align: center;
+    }
+
+    .form-container h1 {
+      font-size: 1.6rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .form-container form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .form-container input {
+      width: 100%;
+      max-width: 300px;
+      padding: .85rem 1rem;
+      border: 1px solid #cbd5e1;
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: .95rem;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .form-container input:focus {
+      outline: none;
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(147, 51, 234, .25);
+    }
+
+    .error {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .pay-form {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .pay-form textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid #cbd5e1;
+      border-radius: var(--radius);
+      font-family: inherit;
+      resize: vertical;
+      font-size: .95rem;
+    }
+
+    .pay-form textarea:focus {
+      outline: none;
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(147, 51, 234, .25);
+    }
+
+    .help {
+      font-size: .8rem;
+      color: var(--muted);
+      margin-top: -.5rem;
+    }
+
+    .pay-options {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .pay-option {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .pay-option input {
+      accent-color: var(--primary);
+      transform: scale(1.2);
+    }
+
+    .icon-pay {
+      width: 24px;
+      height: 24px;
+    }
+
+    .payment-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .06);
+    }
+
+    .payment-box .qr {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+    }
+
+    .payment-box code {
+      word-break: break-all;
+      font-size: .9rem;
+      background: #e2e8f0;
+      padding: .5rem;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .sidebar {
+        width: auto;
+        position: static;
+        display: flex;
+        overflow-x: auto;
+        padding: 1rem .5rem;
+        border-radius: 8px;
+        top: auto;
+      }
+
+      .sidebar ul {
+        flex-direction: row;
+        gap: 1rem;
+      }
+
+      .cat-link {
+        white-space: nowrap;
+        padding: .45rem .9rem;
+      }
+
+      .product-list {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
+
+      .navbar {
+        flex-wrap: wrap;
+      }
+    }
+
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    .cart-table.modern {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 12px;
+    }
+
+    .cart-table.modern thead th {
+      background-color: var(--bg);
+      text-align: left;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .cart-table.modern tbody tr {
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .cart-table.modern tbody td {
+      padding: 1rem;
+      vertical-align: middle;
+      font-size: 0.95rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .cart-table.modern tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .cart-footer {
+      text-align: right;
+      margin-top: 1rem;
+    }
+
+    .cart-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .cart-sidebar {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+    }
+
+    @media (max-width: 900px) {
+      .cart-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cart-sidebar {
+        margin-top: 2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .cart-table.modern thead {
+        display: none;
+      }
+
+      .cart-table.modern tbody tr {
+        display: block;
+        margin-bottom: 1.25rem;
+        border-radius: var(--radius);
+        padding: 1rem;
+      }
+
+      .cart-table.modern tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.6rem 0;
+        border: none;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .cart-table.modern tbody td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--muted);
+        flex: 1;
+        text-align: left;
+      }
+    }
+  </style>
+  <meta name="description"
+    content="BlackMarket, Darknet marketplaces, illegal online shops, drugs, carding, hacking, cryptocurrencies, darknet vendors, black markets, stolen credit cards, crypto trading, underground markets, encrypted transactions, darknet services, illicit goods, anonymous vendors, bitcoin, monero, stolen data, exploits, malware, VPN, proxies, darknet hacking, escrow services." />
+  <meta name="keywords"
+    content="BlackMarket, drug, drugs, dope, dop, narc, narcotics, narcotic, drugstore, darknetmarket, dark web shop, illegal marketplace, black market, silk road, cryptomarket, underground shop, illicit vendor, blackmarket, stash, vendor, vendors, buy drugs online, darknet shop, darkmarket, darknet marketplace, online black market, illegal online shop, trafic illicite, droga, drogas, mercado negro, mercado clandestino, dark web, tienda ilegal, vendeur, mercado ilícito, Schwarzmarkt, Darknet, illegaler Laden, Händler, чёрный рынок, darknet, нелегальный магазин, торговля, 毒品, 黑市, 暗网, 非法商店, наркотики, чёрный маркет, nelegal'nyy magazin, darknet shop, dark web marketplace, underground market, crypto store, black shop, illegal vendor, darknet dealer, illicit sale, buy drugs, darknet vendor, dark net shop, darkweb blackmarket, clandestine shop, hidden market, encrypted marketplace, 5hop, sh0p, dr0gs, m4rket, clandestine vendor, illegal darknet shop, darknet black market, underground cryptomarket, anonymous vendor, darknet trading, darknet trading platform, illegal online store, carding, cc, ccv, credit card, credit cards, stolen credit, hacked card, cc dump, cc shop, carding cc, ccv, card, cards, hacking, malware, exploits, darknet hacking, stolen data, compromised accounts, VPN, proxy, encryption, anonymity, cryptocurrency, bitcoin, monero, darknet wallet, dark web currency, illicit crypto, dark market crypto, darknet exchange, escrow, bitcoin escrow, darknet escrow" />
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body class="w3-light-gray">
+<body>
+  <header class="navbar">
+    <div class="navbar-left"><a href="index.php.html" class="logo">BlackMarket</a></div>
+    <nav class="nav">
+      <a href="index.php.html" class="nav-link"><img src="assets/icons/home-static.png" alt="">Home</a>
+      <a href="pgp.php.html" class="nav-link"><img src="assets/icons/pgp-static.png" alt="">PGP</a>
+              <a href="login.php.html" class="nav-link"><img src="assets/icons/login-static.png" alt="">Login</a>
+        <a href="register.php.html" class="nav-link"><img src="assets/icons/register-static.png" alt="">Register</a>
+          </nav>
+  </header>
 
-    <div class="w3-container">
-        <main role="main">
-            
-<div class="w3-panel w3-content w3-justify w3-display-container" style="margin-bottom:0px; padding:0px; min-height:100px">
-    <div class="w3-display-bottomleft">
-        <div class="w3-cell w3-cell-bottom">
-            <div class="w3-white w3-padding w3-card"
-                 style="border-top-left-radius:12px; border-top-right-radius:12px; margin-right:4px; clip-path : polygon(-10% -10%, -10% 110%, 0% 110%, 0% 100%, 110% 100%, 110% -10%)">
-                <h2>Sites</h2>
-            </div>
-        </div>
-        <div class="w3-cell w3-cell-bottom">
-            <a class="w3-white w3-padding w3-button w3-border-bottom w3-border-light-gray" style="border-top-left-radius:12px; border-top-right-radius:12px; margin-right:4px" title="Utilisateurs" href="Users.html">
-                <h4>Utilisateurs</h4>
+  <div class="banner">Thanks to our network of quality sellers, we sell and ship items all over the world, without
+    exception.</div>
+
+  <main class="content">
+    <aside class="sidebar">
+      <h3>Categories</h3>
+      <ul>
+                  <li><a href="index.html%3Fcategory=All.html"
+              class="cat-link active">All</a></li>
+                  <li><a href="index.html%3Fcategory=Liquid.html"
+              class="cat-link">Liquid</a></li>
+                  <li><a href="index.html%3Fcategory=Hashish.html"
+              class="cat-link">Hashish</a></li>
+                  <li><a href="index.html%3Fcategory=XTC%252FEcstasy.html"
+              class="cat-link">XTC/Ecstasy</a></li>
+                  <li><a href="index.html%3Fcategory=Heroin.html"
+              class="cat-link">Heroin</a></li>
+                  <li><a href="index.html%3Fcategory=Weed.html"
+              class="cat-link">Weed</a></li>
+                  <li><a href="index.html%3Fcategory=Ketamine.html"
+              class="cat-link">Ketamine</a></li>
+                  <li><a href="index.html%3Fcategory=Cocain.html"
+              class="cat-link">Cocain</a></li>
+                  <li><a href="index.html%3Fcategory=Carding.html"
+              class="cat-link">Carding</a></li>
+              </ul>
+    </aside>
+
+    <section class="product-list">
+                <div class="product-item">
+            <a href="product.php%3Fid=1.html">
+              <img src="assets/images/panama-liquid.png" alt="110ml - THC Liquid - 70% THC">
+              <div class="product-info">
+                <h2>110ml - THC Liquid - 70% THC</h2>
+                <p class="price">$69.99</p>
+              </div>
             </a>
-        </div>
-        <div class="w3-cell w3-cell-bottom">
-            <a class="w3-white w3-padding w3-button w3-border-bottom w3-border-light-gray" style="border-top-left-radius:12px; border-top-right-radius:12px; margin-right:4px" title="Infos" href="About.html">
-                <h4>Infos</h4>
+          </div>
+                  <div class="product-item">
+            <a href="product.php%3Fid=2.html">
+              <img src="assets/images/avant-garde-hash.png" alt="5g - Hashish - 80% HQ">
+              <div class="product-info">
+                <h2>5g - Hashish - 80% HQ</h2>
+                <p class="price">$24.99</p>
+              </div>
             </a>
-        </div>
-    </div>
-</div>
-
-<div class="w3-panel w3-content w3-card w3-white w3-justify" style="margin-top:0px">
-    <br />
-        <p><b>Forums</b></p>
-            <p>
-                DarkNetFrance<br />
-                <span class="w3-monospace">http://dreadytofatroptsdj6io7l3xptbet6onoyno2yv7jicoxknyazubrad.onion/d/darknetfrance</span>
-            </p>
-            <p>
-                French Pool<br />
-                <span class="w3-monospace">http://frenchpoolhdakynrvuhndrdlh5lxqp5prvh457mv26ebcdnbgqyhgyd.onion/index.php</span>
-            </p>
-            <p>
-                L&#x27;Entremonde<br />
-                <span class="w3-monospace">http://trashchan2rvdng5zm7346sfxrrkjwvqzolw4lfdyldcsdpmsyj4dkid.onion/ent/index.html</span>
-            </p>
-            <p>
-                DFAS<br />
-                <span class="w3-monospace">http://dfasg4j6ebrkhjyxfff3nbp7c56ugl4zc2ml5gzkmcxvf77iodq3fsad.onion</span>
-            </p>
-            <p>
-                D&#xE9;j&#xE0;-vu<br />
-                <span class="w3-monospace">http://dejavuzmognafaelr73if4564f5tfhecr4nxcoubky5qofh5urpshfyd.onion/forum</span>
-            </p>
-            <p>
-                Le Chemin Sombre<br />
-                <span class="w3-monospace">http://lechemintvwmunycley3gv2yef3fdfyr76wff4pcjvtqhhzacuwbylad.onion</span>
-            </p>
-        <br />
-        <p><b>Chats</b></p>
-            <p>
-                Le Mur<br />
-                <span class="w3-monospace">http://24ov5b5kawzsevv2ayltf52shlutzsewcjligevx35izqahqivdujryd.onion</span>
-            </p>
-            <p>
-                Le chat noir<br />
-                <span class="w3-monospace">http://lenoirchathlutrlz6gq6vchngvxjevkw33nwzpjnk5qbaabg5ruafad.onion/login</span>
-            </p>
-        <br />
-        <p><b>Shops</b></p>
-            <p>
-                Mon DD<br />
-                <span class="w3-monospace">http://monddfr7i6ee5ytko4nzwudhst3nqlnlsx2ltspmmzdoiupdoixsrkyd.onion</span>
-            </p>
-            <p>
-                HardVPS<br />
-                <span class="w3-monospace">http://hardvpsv4ooid4jbsd6fqvyhrsmmdje5eif6rlydk72333lcr3a2wwyd.onion</span>
-            </p>
-            <p>
-                PapaGanja<br />
-                <span class="w3-monospace">http://papagjnilhxehhvdkzdezind5moufvsz5uw7j2756ecdr3jo35p2g6ad.onion</span>
-            </p>
-            <p>
-                JackMesrine<br />
-                <span class="w3-monospace">http://jackmexiieaj4kbltxddv6ug7haazpqkoit65lofsljcr5fsylx7bbid.onion</span>
-            </p>
-            <p>
-                PlanetWeed<br />
-                <span class="w3-monospace">http://planetpfcocgt3iaz4opdvjfass57op3r4lx3tlmjrqdqvanet7s3pad.onion</span>
-            </p>
-            <p>
-                TinyHouseCanna<br />
-                <span class="w3-monospace">http://thclab4gtkgbp33oy5m2dxzfqrqprnxgsxeziz33chza7udmtnefbbyd.onion</span>
-            </p>
-            <p>
-                Hellbin<br />
-                <span class="w3-monospace">http://hellbinuhs3hobszpwexcpqapmznqopmw2aeyzzmw4jssmy4e7msgdyd.onion</span>
-            </p>
-            <p>
-                Doraemon<br />
-                <span class="w3-monospace">http://doraemonr5dsozne3wj5hzdu6d2pb3eadiw56l2kcfqqqgbhlcxhieyd.onion</span>
-            </p>
-        <br />
-        <p><b>Shops inactifs</b></p>
-            <p>
-                DeepCrack<br />
-                <span class="w3-monospace">http://deepckodhw4n6opjhsff53cme7yon3x4don4dirvu5cspqsuvj352nid.onion</span>
-            </p>
-            <p>
-                WeedAmax<br />
-                <span class="w3-monospace">http://weedamsvgf22e7c7m2ppsr67cxhblpbhhikcefl6ulmydi22mchk3lad.onion</span>
-            </p>
-            <p>
-                TribeDrugs<br />
-                <span class="w3-monospace">http://tribeds7qq5wxpkbvnn3dvjgrjctjru7kf2pvupfm6a7zobj3nmj7tid.onion</span>
-            </p>
-            <p>
-                FungiStoner<br />
-                <span class="w3-monospace">http://fungisxraf6fdnez7kaggvkcxmuufd5jsldr42krqy474cpxyf3vmvqd.onion</span>
-            </p>
-            <p>
-                EiffelCartel<br />
-                <span class="w3-monospace">http://eiffel4aeazv3ridlu6gzfucvslkg3mnaxt3gntxpvvi6osug6uhsvad.onion</span>
-            </p>
-            <p>
-                DrBuisson<br />
-                <span class="w3-monospace">http://drbuisdo4gcr4qi7ngvscl4uu52r5gezwgjb4777cce3mxd26p3adwyd.onion</span>
-            </p>
-            <p>
-                HeavensGate<br />
-                <span class="w3-monospace">http://heavenaiysqxvrqmyqz6uecttxhxr4n7e7qncpx7mubqezjksgqxtaqd.onion</span>
-            </p>
-            <p>
-                Delivroo Bordeaux<br />
-                <span class="w3-monospace">http://delivrxuyz5cauzil6edxojkkmmpi3osb22jhdehvlfmmmpjajpfvsid.onion</span>
-            </p>
-        <br />
-        <p><b>Actualit&#xE9;</b></p>
-            <p>
-                Mediapart<br />
-                <span class="w3-monospace">https://www.mediapartrvj4bsgolbxixw57ru7fh4jqckparke4vs365guu6ho64yd.onion</span>
-            </p>
-        <br />
-        <p><b>Services</b></p>
-            <p>
-                Au DD<br />
-                <span class="w3-monospace">http://auddfrjxl57lpy6gjbhlyiazn44cuimyv6qpvn6p42nxa3vleanyydad.onion</span>
-            </p>
-            <p>
-                Annuaire<br />
-                <span class="w3-monospace">http://annuairyxgfymj5y2ld5h2w6uys5juf77lbgojr4wvv2dwlfy4tujaad.onion</span>
-            </p>
-            <p>
-                Fuite<br />
-                <span class="w3-monospace">http://fuite2l3jdvtr3qqstqdmqxewwdog6n5m7yvolf7icak4f4nkrx6t2id.onion</span>
-            </p>
-            <p>
-                Mediapart SecureDrop<br />
-                <span class="w3-monospace">http://wmqzwx5jbcaciuore32ljrxwmz6vcgggtpvocofh64py65e7pdu6p5qd.onion</span>
-            </p>
-            <p>
-                Investigation Radio France<br />
-                <span class="w3-monospace">http://ckahyzrwglnbgrsehevnugp37nmynopnebvftmjvsxi54fsuqt4nogad.onion</span>
-            </p>
-        <br />
-</div>
-        </main>
-    </div>
-
-    <br />
-    <br />
+          </div>
+                  <div class="product-item">
+            <a href="product.php%3Fid=3.html">
+              <img src="assets/images/chromehearts-xtc.png" alt="10pcs - XTC/Ecstasy - 280mg/Pill">
+              <div class="product-info">
+                <h2>10pcs - XTC/Ecstasy - 280mg/Pill</h2>
+                <p class="price">$32.00</p>
+              </div>
+            </a>
+          </div>
+                  <div class="product-item">
+            <a href="product.php%3Fid=4.html">
+              <img src="assets/images/darklight-heroin.png" alt="1g - Heroin - 60% HQ">
+              <div class="product-info">
+                <h2>1g - Heroin - 60% HQ</h2>
+                <p class="price">$30.00</p>
+              </div>
+            </a>
+          </div>
+                  <div class="product-item">
+            <a href="product.php%3Fid=5.html">
+              <img src="assets/images/fiveguys-weed.png" alt="3g - Weed - GIRL SCOUT COOKIES">
+              <div class="product-info">
+                <h2>3g - Weed - GIRL SCOUT COOKIES</h2>
+                <p class="price">$29.99</p>
+              </div>
+            </a>
+          </div>
+                  <div class="product-item">
+            <a href="product.php%3Fid=6.html">
+              <img src="assets/images/necro7-ketamin.png" alt="1g - Ketamine - 99.99% HQ">
+              <div class="product-info">
+                <h2>1g - Ketamine - 99.99% HQ</h2>
+                <p class="price">$24.99</p>
+              </div>
+            </a>
+          </div>
+                  <div class="product-item">
+            <a href="product.php%3Fid=7.html">
+              <img src="assets/images/necro7-ketamin.png" alt="1g - Ketamine - 99% HQ">
+              <div class="product-info">
+                <h2>1g - Ketamine - 99% HQ</h2>
+                <p class="price">$23.99</p>
+              </div>
+            </a>
+          </div>
+                  <div class="product-item">
+            <a href="product.php%3Fid=8.html">
+              <img src="assets/images/papaganja-weed.png" alt="2g - Weed - Amnesia Haze">
+              <div class="product-info">
+                <h2>2g - Weed - Amnesia Haze</h2>
+                <p class="price">$24.00</p>
+              </div>
+            </a>
+          </div>
+                  <div class="product-item">
+            <a href="product.php%3Fid=9.html">
+              <img src="assets/images/coco-xtc.png" alt="10pcs - XTC/Ecstasy - 300mg/Pill">
+              <div class="product-info">
+                <h2>10pcs - XTC/Ecstasy - 300mg/Pill</h2>
+                <p class="price">$36.00</p>
+              </div>
+            </a>
+          </div>
+                  <div class="product-item">
+            <a href="product.php%3Fid=10.html">
+              <img src="assets/images/topplugz-liquid.png" alt="10ml - THC Vape - 65% THC">
+              <div class="product-info">
+                <h2>10ml - THC Vape - 65% THC</h2>
+                <p class="price">$42.00</p>
+              </div>
+            </a>
+          </div>
+                  <div class="product-item">
+            <a href="product.php%3Fid=11.html">
+              <img src="assets/images/vivalavida-hash.png" alt="4g - Hashish - 99% HQ">
+              <div class="product-info">
+                <h2>4g - Hashish - 99% HQ</h2>
+                <p class="price">$26.99</p>
+              </div>
+            </a>
+          </div>
+                  <div class="product-item">
+            <a href="product.php%3Fid=12.html">
+              <img src="assets/images/tm-heroin.png" alt="1g - Heroin - 80% HQ">
+              <div class="product-info">
+                <h2>1g - Heroin - 80% HQ</h2>
+                <p class="price">$32.00</p>
+              </div>
+            </a>
+          </div>
+                  <div class="product-item">
+            <a href="product.php%3Fid=13.html">
+              <img src="assets/images/hotgirlzclub-cocain.png" alt="1g - Cocain - 80% HQ">
+              <div class="product-info">
+                <h2>1g - Cocain - 80% HQ</h2>
+                <p class="price">$42.00</p>
+              </div>
+            </a>
+          </div>
+                  <div class="product-item">
+            <a href="product.php%3Fid=14.html">
+              <img src="assets/images/tijuanapaisa-cocain.png" alt="1g - Cocain - 90% HQ">
+              <div class="product-info">
+                <h2>1g - Cocain - 90% HQ</h2>
+                <p class="price">$46.00</p>
+              </div>
+            </a>
+          </div>
+                  <div class="product-item">
+            <a href="product.php%3Fid=15.html">
+              <img src="assets/images/rasput1n-carding2.png" alt="1x - Credit Card - EUROPE">
+              <div class="product-info">
+                <h2>1x - Credit Card - EUROPE</h2>
+                <p class="price">$42.00</p>
+              </div>
+            </a>
+          </div>
+                  <div class="product-item">
+            <a href="product.php%3Fid=16.html">
+              <img src="assets/images/rasput1n-carding.png" alt="1x - Credit Card - USA">
+              <div class="product-info">
+                <h2>1x - Credit Card - USA</h2>
+                <p class="price">$36.00</p>
+              </div>
+            </a>
+          </div>
+            </section>
+  </main>
 </body>
+
 </html>
